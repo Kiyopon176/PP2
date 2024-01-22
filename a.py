@@ -1,4 +1,5 @@
 #Python SYNTAX
+#This file in the new branch
 #Ex 1
 print("hello world")
 #Ex 2
@@ -128,4 +129,14 @@ txt = " Hello World "
 txt = txt.upper()
 
 #Ex 6
+txt = "Hello World"
+txt = txt.lower()
 
+#Ex 7
+txt = "Hello World"
+txt = txt.replace('H', 'J')
+
+#Ex 8
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
