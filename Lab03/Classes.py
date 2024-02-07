@@ -99,17 +99,20 @@ class Point:
     def __init__(self):
         self.coordinateX = 0
         self.coordinateY = 0
+
     def show(self):
         print(self.coordinateX, "," , self.coordinateY )
-        return
+        
+    
     def move(self):
         Xmovement = int(input("input X movement: "))
         Ymovement = int(input("input Y movement: "))
         self.coordinateX += Xmovement
         self.coordinateY += Ymovement
-        return
+        
+    
     def dist(self):
-        distance += math.sqrt(self.coordinateX**2 + self.coordinateY**2)
+        distance = math.sqrt(self.coordinateX**2 + self.coordinateY**2)
         return distance
     
 m1 = Point()
@@ -119,3 +122,73 @@ m1.show()
 print("Your distance is: ",  m1.dist())
 m1.move()
 m1.show()
+
+
+'''
+*
+*
+*
+Ex 5
+*
+*
+*
+'''
+
+class Account:
+    pass
+
+class Bank:
+    
+    def __init__(self):
+        self.owner = input("Enter name of an owner of bank owner:")
+        self.balance = 0
+    def showBalance(self):
+        print( "Now your balance is: ", self.balance, "$")
+    def deposit(self):
+        depositSum = float(input("Enter amount of your deposit: "))
+        self.balance += depositSum
+        self.showBalance()
+
+    def withdraw(self):
+        withdrawAmount = float(input("Enter amount of withdrawal: "))
+        if(withdrawAmount <= self.balance and withdrawAmount > 0):
+            self.balance -= withdrawAmount
+            self.showBalance()
+        else:
+            print("You cannot wihtdraw your money.")
+
+
+m1 = Bank()
+m1.deposit()
+m1.withdraw()
+m2 = Bank()
+m2.deposit()
+m2.withdraw()
+m1.showBalance()
+m2.showBalance()
+'''
+*
+*
+*
+Ex 6
+*
+*
+*
+'''
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+
+prime_numbers = list(filter(lambda x: is_prime(x), numbers))
+
+
+print("Prime numbers in the list:", prime_numbers)
